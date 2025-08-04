@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aldrin Lijo | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+      <script>
+    // Flip cards on click (mobile-friendly)
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".flip-on-click").forEach(card => {
+        card.addEventListener("click", () => {
+          card.querySelector(".flip-card-inner").classList.toggle("clicked");
+        });
+      });
+    });
+  </script>
+</head>
+<body class="dark-body">
+
+  {% include 'navigation.html' %}
+
+  <!-- Hero Section -->
+  <section class="gradient-hero text-center">
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Aldrin Lijo" class="profile-pic">
+    <h1 class="mt-4">Hello, I'm <strong>Aldrin Lijo E M</strong></h1>
+      <div class="typing-container"><p class="typing-text" id="typedText" class="lead mb-4">Final-Year IT Student | ML & Software Developer | Java Enthusiast</p></div>
+    <a href="#project" class="btn btn-red me-3">🚀 View Projects</a>
+    <a href="#contact" class="btn btn-outline-red">📬 Contact</a>
+  </section>
+
+
+<div class="resume-download">
+  <a href="{{ url_for('download_resume') }}" class="btn-outline-red">
+    📄 Download Resume
+  </a>
+</div>
+
+  <!-- Stats Section -->
+  <section class="stats-section text-center">
+    <div class="stat-card">
+      <h3>5+</h3>
+      <p>ML & Web Projects</p>
+    </div>
+    <div class="stat-card">
+      <h3>45+</h3>
+      <p>LeetCode Problems<br><small>63% Acceptance</small></p>
+    </div>
+    <div class="stat-card">
+      <h3>665+</h3>
+      <p>SkillRack Problems Solved</p>
+    </div>
+    <div class="stat-card">
+      <h3>3</h3>
+      <p>Internships Completed</p>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section id="about" class="container py-5 text-light">
+    <h2 class="text-center mb-4">👨‍💻 About Me</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <div class="card p-4">
+          <p>
+I’m a final-year B.Tech IT student with a strong interest in Machine Learning, Python, and real-world data-driven applications. I’ve developed ML projects like a Fair Customer Prediction System and an Insurance Claim Predictor using scikit-learn and pandas. I’m also building a news website using Flask, HTML/CSS, and MongoDB to strengthen my full-stack and backend development skills.I completed a software engineering internship at Alpha Ori – ZeroNorth A/S, where I gained hands-on experience with agile teams and product development. I’ve also won national-level coding and web design competitions. I’m passionate about using AI to solve meaningful problems and am eager to grow in the field of intelligent systems and software development.          </p>
+          <div class="text-center mt-3">
+            <a href="#internships" class="btn btn-outline-red">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Technical Skills-->
+  <div class="cards-grid">
+
+  <!-- Skill Card 1 -->
+  <div class="info-card" id="project">
+    <h5 class="text-danger mb-3">💡 Machine Learning & Backend</h5>
+    <ul class="list-unstyled">
+      <li>✔️ Machine Learning </li>
+      <li>✔️ Flask & Python Web Development</li>
+      <li>✔️ SQLite, MongoDB </li>
+      <li>✔️ excel </li>
+    </ul>
+  </div>
+
+  <!-- Skill Card 2 -->
+  <div class="info-card">
+    <h5 class="text-danger mb-3">💻 Frontend & Programming</h5>
+    <ul class="list-unstyled">
+      <li>✔️ HTML, CSS, JavaScript</li>
+      <li>✔️ Java (Core + Learning Spring)</li>
+      <li>✔️ Python</li>
+      <li>✔️ Git & GitHub, VS Code, PyCharm</li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+  <!--project-->
+ <section id="projects">
+  <h2 class="text-center mb-4">🧠 ML Projects</h2>
+  <div class="cards-grid">
+
+    <!-- Project 1 -->
+    <div class="info-card flip-on-click">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h5>🌾 Crop Yield Predictor</h5>
+          <p>Forecast crop output using ML</p>
+        </div>
+        <div class="flip-card-back">
+          <p>
+            Flask + XGBoost model predicts crop yield (tonnes/hectare) using season, crop type, and area. Stores results in SQLite DB.
+          </p>
+          <a href="https://github.com/ALDRIN1704/projectFairCustomer/blob/main/README.md" target="_blank" class="btn btn-outline-red mt-2">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="info-card flip-on-click">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h5>💳 Customer Risk Predictor</h5>
+          <p>Detect high-risk clients via ML</p>
+        </div>
+        <div class="flip-card-back">
+          <p>
+            RandomForestClassifier classifies customer risk using invoice delay and dispute history. Model trained, tested, and deployed using joblib.
+          </p>
+          <a href="https://github.com/ALDRIN1704/projectFairCustomer/blob/main/README.md" target="_blank" class="btn btn-outline-red mt-2">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="info-card flip-on-click">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h5>🤖 ClassMate Chatbot</h5>
+          <p>BERT-based chatbot for college FAQs</p>
+        </div>
+        <div class="flip-card-back">
+          <p>
+            BERT-powered chatbot handles student queries with contextual understanding, using intent classification and response retrieval.
+          </p>
+          <a href="https://github.com/ALDRIN1704/SmartRankEstimator" target="_blank" class="btn btn-outline-red mt-2">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="info-card flip-on-click">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h5>📊 Smart Rank Estimator</h5>
+          <p>Predict college admission ranks</p>
+        </div>
+        <div class="flip-card-back">
+          <p>
+            LSTM model predicts ranks from marks and board scores, and recommends colleges by matching past cutoffs. Flask web app frontend.
+          </p>
+          <a href="https://github.com/ALDRIN1704/SmartRankEstimator" target="_blank" class="btn btn-outline-red mt-2">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!--Intenships-->
+<!--Internships-->
+<section id="internships">
+  <h2 class="text-center mb-4">💼 Internships</h2>
+  <div class="cards-grid-1">
+
+    <!-- Internship 1 -->
+    <div class="info-card-1">
+      <h4 class="text-danger">Alpha Ori Technologies</h4>
+      <p><strong>Role:</strong> Software Engineer Intern</p>
+      <p><strong>Duration:</strong> Final Semester</p>
+      <p><strong>Worked On:</strong> ML model development and software integration for maritime analytics.</p>
+    </div>
+
+    <!-- Internship 2 -->
+    <div class="info-card-1">
+      <h4 class="text-danger">Big Bucks Innovation Pvt. Ltd.</h4>
+      <p><strong>Role:</strong> Frontend Developer Intern</p>
+      <p><strong>Duration:</strong> 1 Month</p>
+      <p><strong>Worked On:</strong> Designing and improving UI/UX components for internal dashboards using HTML, CSS, and JS.</p>
+    </div>
+
+    <!-- Internship 3 -->
+    <div class="info-card-1">
+      <h4 class="text-danger">VCODEZ</h4>
+      <p><strong>Role:</strong> Intern – Technical Team</p>
+      <p><strong>Duration:</strong> Jun 2025 – <span class="text-success fw-bold">Present</span></p>
+      <p><strong>Worked On:</strong> Collaborating with the technical team on real-time projects aligned with my academic field.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Experience -->
+  <section id="leadership">
+  <h2 class="text-center mb-4">🤝 Leadership & Volunteering</h2>
+  <div class="cards-grid">
+
+    <div class="info-card">
+      <h3>Incognito’24 Symposium</h3>
+      <p><strong>Role:</strong> Event Organizer – Kodo Jaeger</p>
+      <p><strong>Year:</strong> 2024</p>
+      <p>Led and coordinated the Kodo Jaeger event, managing event flow, participant coordination, and user experience for over 100 attendees.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Smart India Hackathon (SIH) 2024</h3>
+      <p><strong>Role:</strong> Volunteer</p>
+      <p><strong>Year:</strong> 2024</p>
+      <p>Assisted in organizing internal rounds and the finale, providing logistics and technical support to participating teams.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Achievements Section -->
+<!-- Achievements Section -->
+<section id="achievements" class="container py-5 text-light">
+  <h2 class="text-center mb-4">🏆 Achievements</h2>
+  <div class="d-flex justify-content-center flex-wrap gap-4">
+
+    <!-- Card 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-content">
+            <p>🥈 Secured <strong>2nd Place</strong><br>in the National Hackathon<br>at <strong>SIMATS Engineering</strong></p>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <img src="/static/images/simats_hackathon.jpg" alt="SIMATS Hackathon" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-content">
+            <p>🥇 Won <strong>1st Place</strong><br>in Web Design<br>at <strong>Sri Sai Ram Institute of Technology</strong></p>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <img src="/static/images/sairam.jpg" alt="Sri Sai Ram Web Design" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-content">
+            <p>🥇 Achieved <strong>1st Place</strong><br>in Web Design<br>at <strong>SIMATS Engineering</strong></p>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <img src="/static/images/smats_wd.jpg" alt="SIMATS Web Design" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 - IEEE Publication -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-content">
+            <p>📄 Paper Selected for<br><strong>IEEE Conference (ICRISET-532)</strong><br>To be published in 2–3 months</p>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <img src="/static/images/ieee_conf.jpg" alt="IEEE Conference" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Contact -->
+
+
+  <!-- Footer -->
+<footer class="site-footer" id="contact">
+  <div class="footer-content">
+    <p><strong>📧 Email:</strong> <a href="aldrinlijo2004@gmail.com">aldrinlijo2004@gmail.com</a></p>
+          <p><strong>📧 Mobile:</strong> <a href="+91 7598715213">7598715213</a></p>
+
+    <p> <a href="https://www.linkedin.com/in/aldrin-lijo" target="_blank">💼 LinkedIn</a><strong>|</strong><a href="https://github.com/ALDRIN1704" target="_blank">🌐 GitHub</a></p>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Aldrin Lijo. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const phrases = [
+    "Final-Year IT Student",
+    "ML & Software Developer",
+    "Java Enthusiast"
+  ];
+
+  let currentPhrase = 0;
+  let currentChar = 0;
+  let isDeleting = false;
+  const typingSpeed = 100;
+  const pauseBetweenPhrases = 1500;
+  const target = document.getElementById("typedText");
+
+  function typeLoop() {
+    const fullText = phrases[currentPhrase];
+    target.innerHTML = fullText.substring(0, currentChar);
+
+    if (!isDeleting) {
+      if (currentChar < fullText.length) {
+        currentChar++;
+      } else {
+        isDeleting = true;
+        setTimeout(typeLoop, pauseBetweenPhrases);
+        return;
+      }
+    } else {
+      if (currentChar > 0) {
+        currentChar--;
+      } else {
+        isDeleting = false;
+        currentPhrase = (currentPhrase + 1) % phrases.length;
+      }
+    }
+
+    setTimeout(typeLoop, typingSpeed);
+  }
+
+  document.addEventListener("DOMContentLoaded", typeLoop);
+</script>
+
+
+</body>
+</html>
